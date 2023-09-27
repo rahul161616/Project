@@ -1,5 +1,5 @@
 <?php
-function component($i_name, $i_price, $i_img, $i_alt, $i_content, $i_itemId)
+function component($i_name, $i_price, $i_img, $i_alt, $i_content, $i_temId)
 {
     $element = "     
        
@@ -17,7 +17,7 @@ function component($i_name, $i_price, $i_img, $i_alt, $i_content, $i_itemId)
                                     class=\"fa-solid fa-utensils\"></i></button>
                                       <input type=\"hidden\" value=\"$i_name\" name=\"i_name\">
                                <input type=\"hidden\" value=\"$i_price\" name=\"i_price\">
-                             <input type=\"hidden\" value=\"$i_itemId\" name=\"i_itemId\">   
+                             <input type=\"hidden\" value=\"$i_temId\" name=\"i_itemId\">   
                            </div>
                             </div>
                 </form>

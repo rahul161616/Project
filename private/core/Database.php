@@ -5,14 +5,17 @@ class Database
 
     private function connect()
     {
-        $string = "mysql:host=localhost;dbname = projectkg";
 
-        if (!$con = new PDO($string, "root", "")) {
+
+        $string = DBDRIVER . ":host=" . DBHOST . ";dbname=" . DBNAME;
+
+
+        if (!$con = new PDO($string, DBUSER,DBPASS)) {
             die("could not connect to database");
         }
         return $con;
     }
-    public function run($query, $data = array(), $data_type = "object") //=array(so that the  arguement can be optional and default value is already given)
+    public function query($query, $data = array(), $data_type = "object") //=array(so that the  arguement can be optional and default value is already given)
     {
         $con = $this->connect();
         $stm = $con->prepare($query);
@@ -30,8 +33,5 @@ class Database
             }
         }
         return false;
-    }
-    public function query()
-    {
     }
 }

@@ -19,4 +19,14 @@ class Controller
             require("../private/Views/404.view.php");
         }
     }
+
+
+
+    public function load_model($model)
+    { //home view or something else (the file names)
+        if (file_exists("../private/Models/" . ucfirst($model) . ".php")) {
+            require("../private/Models/" . ucfirst($model) . ".php");
+            return $model = new $model();
+        }
+    }
 }

@@ -1,6 +1,11 @@
 <?php
-
-require "Controller.php";
-require "App.php";
 require "Config.php";
 require "Database.php";
+require "Controller.php";
+require "Model.php";
+require "App.php";
+
+spl_autoload_register(function ($class_name) {
+
+    require  "../private/Models/" .  ucfirst($class_name) . ".php";
+});
