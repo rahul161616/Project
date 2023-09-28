@@ -1,7 +1,11 @@
-     </div>
-     </div>
-     </form>
-     </div>
-     </body>
+<script src="<?=ROOT?>
+     /Assets/bootstrap.min.js">
+</script>
 
-     </html>
+</div>
+</div>
+</form>
+</div>
+</body>
+
+</html>

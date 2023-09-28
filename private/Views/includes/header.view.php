@@ -15,4 +15,4 @@
 </head>
 
 <body>
-    <div style="min-width: 350px;">
+    <div style="min-width: 350px;padding:10px;">
