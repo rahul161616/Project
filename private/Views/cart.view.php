@@ -35,26 +35,30 @@
                                 <td>
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button">-</button>
+                                            <a class="btn btn-default" href="<?= ROOT ?>/add_to_cart/subtract_quantity/<?= $row->id ?>">-</a>
                                         </span>
-                                        <input type="text" class="form-control" value="<?= $row->cart_qty ?>" name="quantity">
+                                        <input oninput="edit_quantity(this.value,'<?= $row->id ?>')" type="text" class="form-control" value="<?= $row->cart_qty ?>" name="quantity">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button">+</button>
+                                            <a class="btn btn-default" href="<?= ROOT ?>/add_to_cart/add_quantity/<?= $row->id ?>">+</a>
                                         </span>
                                     </div>
                                 </td>
 
 
+
                                 <td class='i_total'><?= ($row->i_price * $row->cart_qty); ?></td>
                                 <td>
                                     <form method='POST' action="<?= ROOT ?>/Add_to_cart/remove/<?= $row->id ?>">
-                                        <button name='Remove_item' class='btn btn-sm btn-outline-danger'>Delete</button>
+                                        <button name='Remove_item' delete_id="<?= $row->id ?>" onclick="delete_item(this.getAttribute('delete_id'))" class='btn btn-sm btn-outline-danger'>Delete</button>
                                 </td>
                                 <input type='hidden' name='i_name' value='$value[i_name]'>
                                 </form>
                             </tr>
                             <?php $sr++; ?>
                         <?php endforeach; ?>
+                    <?php else :  ?>
+                        <div>No Items were found in the list</div>
+                        <!-- needs styling -->
                     <?php endif; ?>
                 </tbody>
             </table>
@@ -105,24 +109,48 @@
 
     </div>
     <script>
-        var gt = 0;
-        var iprice = document.getElementsByClassName('iprice');
-        var iquantity = document.getElementsByClassName('iquantity');
-        var itotal = document.getElementsByClassName('i_total');
-        var gtotal = document.getElementById('gtotal');
-
-        function subTotal() {
-            var gt = 0;
-            for (i = 0; i < iprice.length; i++) {
-                itotal[i].innerText = (iprice[i].value) * (iquantity[i].value);
-                gt = gt + (iprice[i].value * iquantity[i].value);
-            }
-            gtotal.innerText = gt;
+        function edit_quantity(quantity, id) { //send value to ajax
+            if (isNaN(quantity))
+                return;
+            send_data({
+                quantity: quantity.trim(),
+                id: id.trim()
+            }, "edit_quantity");
         }
-        subTotal();
+
+        function delete_item(id) { //send value to ajax
+            if (isNaN(quantity))
+                return;
+            send_data({
+                id: id.trim()
+            }, "delete_item");
+        }
+
+        function send_data(data = {}, data_type) {
+            var ajax = new XMLHttpRequest();
+            ajax.addEventListener('readystatechange', function() {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    handle_result(ajax.responseText);
+                }
+            });
+            ajax.open("POST", "<?= ROOT ?>/ajax_cart/" + data_type + "/" + JSON.stringify(data), true);
+            ajax.send();
+        }
+
+        function handle_result(result) {
+            console.log(result);
+            if (result != "") {
+                var obj = JSON.parse(result);
+                if (typeof obj.data_type != 'undefined') {
+                    if (obj.data_type == "delete_item") {
+                        window.location.href = window.location.href;
+                    } else {
+                        if (obj.data_type == "edit_quantity") {
+                            window.location.href = window.location.href;
+                        }
+                    }
+                }
+            }
+        }
     </script>
-</body>
-
-
-</html>
-<?php $this->view('includes/footer'); ?>
+    <?php $this->view('includes/footer'); ?>

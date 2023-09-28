@@ -48,6 +48,35 @@ class Add_to_cart extends Controller
         // unset($_SESSION['CART']);
         $this->redirect();
     }
+    public function add_quantity($id = '')
+    {
+        $this->set_redirect();
+        
+        $id = htmlspecialchars($id, ENT_QUOTES, 'UTF-8');
+        if (isset($_SESSION['CART'])) {
+            foreach ($_SESSION['CART'] as $key => $item) {
+                if ($item['id'] == $id) {
+                    $_SESSION['CART'][$key]['qty'] += 1;
+                    break;
+                }
+            }
+        }
+        $this->redirect();
+    }
+    public function subtract_quantity($id = '')
+    {
+        $this->set_redirect();
+        $id = htmlspecialchars($id, ENT_QUOTES, 'UTF-8');
+        if (isset($_SESSION['CART'])) {
+            foreach ($_SESSION['CART'] as $key => $item) {
+                if ($item['id'] == $id) {
+                    $_SESSION['CART'][$key]['qty'] -= 1;
+                    break;
+                }
+            }
+        }
+        $this->redirect();
+    }
     public function remove($id = '')
     {
         $this->set_redirect();
