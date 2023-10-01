@@ -66,43 +66,15 @@
 
         <div class="col-lg-3">
             <div class="border bg-light rounded p-4">
-                <h3>Grand Total:</h3>
+                <h3>Grand Total: <?= number_format($sub_total) ?></h3>
                 <h4 class="text-right" id='gtotal'></h4>
+                <a href="<?= ROOT ?>/home" class="btn btn-primary btn-block">
+                    <input type="button" class="btn btn-warning pull-left" value="< Continue Shopping" name="">
+                </a>
+                <a href="<?= ROOT ?>/checkout" class="btn btn-primary btn-block">
+                    <input type="button" class="btn btn-warning pull-right" value="Checkout >" name="">
+                </a>
 
-                <?php
-                if (isset($_SESSION['CART']) && count($_SESSION['CART']) > 0) {
-                ?>
-                    <form action="./place.php" method="POST">
-                        <div class="mb-3">
-                            <label>Full Name</label>
-                            <input type="text" name="name" class=" form-control" id="exampleInputPassword1" required>
-                        </div>
-                        <div class="mb-3">
-                            <label>Phone Number</label>
-                            <input type="number" name="phone" class="form-control" id="exampleInputPassword1" required>
-                        </div>
-                        <div class="mb-3">
-                            <label>Address</label>
-                            <input type="text" name="address" class="form-control" id="exampleInputPassword1" required>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="payment_Mode" id="flexRadioDefault1" value="Esewa">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Esewa
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="payment_Mode" value="Cash_on_Counter" id="flexRadioDefault2" checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                Cash On Counter
-                            </label>
-                        </div>
-                        <button class="btn btn-primary btn-block" name="place">Place Order</button>
-
-                    </form>
-                <?php
-                }
-                ?>
             </div>
 
         </div>

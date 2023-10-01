@@ -23,9 +23,10 @@ class Home extends Controller
         // $arr['i_temId'] = 3;
         // $data = $iteminfo->where('i_name', 'Momo');
         // $iteminfo->insert($arr);
-          // $iteminfo->update(7, $arr); //update($id,$data);
+        // $iteminfo->update(7, $arr); //update($id,$data);
         // $iteminfo->delete(7);
-        // $data =  $iteminfo->findAll();
+        // $data =  $iteminfo->findAll(); 
+      
         $data =  $iteminfo->findAll();
 
         $this->view('home', ['rows' => $data]);
@@ -34,6 +35,5 @@ class Home extends Controller
 
         echo "<pre>";
         print_r($_POST);
-      
     }
 }

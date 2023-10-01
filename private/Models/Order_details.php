@@ -1,5 +1,5 @@
 <?php
-class User_order_info extends Model
+class Order_details extends Model
 {
     protected $table = "user_order";
 }

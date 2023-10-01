@@ -1,6 +1,6 @@
 <?php
 
-class Cart extends Controller
+class Checkout extends Controller
 {
     protected $table = "iteminfo";
     public function __construct()
@@ -36,7 +36,7 @@ class Cart extends Controller
                 }
             }
         }
-        $data['page_title'] = "Cart";
+        $data['page_title'] = "Checkout";
         $data['sub_total'] = 0;
         if ($rows) {
             foreach ($rows as $key => $row) {
@@ -46,6 +46,7 @@ class Cart extends Controller
         }
 
         $data['rows'] = $rows;
-        $this->view("cart", $data);
+        // show($rows);
+        $this->view("checkout", $data);
     }
 }
