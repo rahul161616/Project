@@ -16,7 +16,7 @@ Loading is done in from the main controller-->
                     $element = "     
        
                           <div class=\"col-lg-4 col-md-6 col-sm-12 my-3\">
-                           <form method=\"POST\" form action=\"" . ROOT . "/add_to_cart/".$i_temId."\">
+                           <form method=\"POST\" form action=\"" . ROOT . "/add_to_cart/" . $i_temId . "\">
                           <div class=\"card shadow\">
                            <div>
                             <img src=\"" . ROOT . "/Assets/$i_img\" alt=\"$i_alt\" class=\"img-fluid \"> 
@@ -51,5 +51,5 @@ Loading is done in from the main controller-->
                 ?>
             </div>
         </div>
-
+        <?php $this->view('includes/timer'); ?>
         <?php $this->view('includes/footer'); ?>

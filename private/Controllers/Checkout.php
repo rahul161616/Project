@@ -44,9 +44,19 @@ class Checkout extends Controller
                 $data['sub_total'] += $mytotal;
             }
         }
-
+        if (is_array($rows)) {
+            rsort($rows);
+        }
         $data['rows'] = $rows;
         // show($rows);
+        if (count($_POST) > 0) {
+            // show($_POST);
+            // show($rows);
+            $checkout = new Checkout_Model();
+            $checkout->save_checkout($_POST, $rows);
+            unset($_SESSION['CART']);
+            // header("Location: " . ROOT . "Thankyou");
+        }
         $this->view("checkout", $data);
     }
 }

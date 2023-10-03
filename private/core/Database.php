@@ -10,7 +10,7 @@ class Database
         $string = DBDRIVER . ":host=" . DBHOST . ";dbname=" . DBNAME;
 
 
-        if (!$con = new PDO($string, DBUSER,DBPASS)) {
+        if (!$con = new PDO($string, DBUSER, DBPASS)) {
             die("could not connect to database");
         }
         return $con;
@@ -33,5 +33,16 @@ class Database
             }
         }
         return false;
+    }
+    public function write($query, $data = array())
+    {
+        $con = $this->connect();
+        $stm = $con->prepare($query);
+        $result = $stm->execute($data);
+        if ($result) {
+            return true;
+        }
+        $errorInfo = $stm->errorInfo();
+        print_r($errorInfo);
     }
 }

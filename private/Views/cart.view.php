@@ -125,4 +125,5 @@
             }
         }
     </script>
+    <?php $this->view('includes/timer'); ?>
     <?php $this->view('includes/footer'); ?>
