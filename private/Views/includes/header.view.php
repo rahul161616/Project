@@ -16,5 +16,13 @@
 </head>
 
 <body>
+    <?php if(isset($_COOKIE['msg'])){?>
+    <div class="alert alert-danger w-25" role="alert">
+        <?php
+        echo $_COOKIE['msg'] ?? "";
+        ?>
+    </div>
+    <?php }?>   
+
+
     <div style="min-width: 350px;padding:10px;">
-       

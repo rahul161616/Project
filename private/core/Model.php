@@ -39,7 +39,7 @@ class Model extends Database
 
 
 
-    public function update($id, $data)
+    public function update($id, $data=[])
     {
         $str = "";
         foreach ($data as $key => $value) {
@@ -48,13 +48,18 @@ class Model extends Database
         $str = trim($str, ",");
         $data['id'] = $id;
         $query = "update $this->table set $str where id =:id";
+       
         return $this->query($query, $data);
     }
 
     public function delete($id)
     {
-        $query = "delete from $this->table where id = :id";
+        $query = "delete from `$this->table` where id = :id";
+        show($query);
         $data['id'] = $id;
-        return $this->query($query, $data);
+        $res = $this->query($query, $data);
+        show($res);
+        die;
+        return ;
     }
 }

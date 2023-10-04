@@ -111,9 +111,10 @@ $this->view('includes/nav'); ?>
         }
     }
     // Check if there's a stored countdown timer value in localStorage
-    var storedTimer = localStorage.getItem('countdownTimer');
-    alert(storedTimer);
-    var countdownTimer;
+
+    // var storedTimer = localStorage.getItem('countdownTimer');
+    // alert(storedTimer);
+    // var countdownTimer;
 
     // Fetch consistent content from the server using AJAX
     var xhr = new XMLHttpRequest();

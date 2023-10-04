@@ -55,7 +55,7 @@ class Checkout extends Controller
             $checkout = new Checkout_Model();
             $checkout->save_checkout($_POST, $rows);
             unset($_SESSION['CART']);
-            // header("Location: " . ROOT . "Thankyou");
+            // header("Location: " . ROOT . "/edit");
         }
         $this->view("checkout", $data);
     }

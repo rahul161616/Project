@@ -9,6 +9,16 @@ class Edit extends Controller
     }
     public function index()
     {
+
+
+// 
+if(!isset($_COOKIE['edit-limit'])){
+            setcookie("msg", "you cannot edit order after 2 minutes", time() + 60, "/");
+
+    // redirect(ROOT); 
+} 
+// 
+
         echo "This is index function";
         show($_GET);
 
@@ -16,24 +26,35 @@ class Edit extends Controller
 
         // Validate and sanitize user input
         $phone = isset($_GET['phone']) ? filter_var($_GET['phone'], FILTER_SANITIZE_NUMBER_INT) : null;
-
+        $data = [];
         if ($phone !== null) {
             // Use a prepared statement
-            $query = "SELECT id FROM user_details_orders WHERE phone = :phone";
+            $query = "SELECT id FROM user_details_orders WHERE phone = :phone ORDER BY order_date DESC LIMIT 1";
+            $data['rows'] =  $search_model->query($query, ['phone' => $phone]);
 
-            $data =  $search_model->query($query, ['phone' => $phone]);
 
 
-            if (is_array($data)) {
-                $this->view('edit', ['rows' => $data]);
-                $data['page_title'] = "Edit";
-            } else {
-                $this->view('edit', ['error' => "No matching data found."]);
-                $data['page_title'] = "Edit";
-            }
+            $order_details = new Order_details();
+            $query2 = "SELECT * from order_details where order_id = :data";
+            $data['rows1'] = $order_details->query($query2, ['data' => $data['rows'][0]->id]);
         } else {
-            $this->view('edit', ['error' => "Invalid phone number."]);
-            $data['page_title'] = "Edit";
+            $data['error'] = "Invalid phone number.";
+        }
+        $data['page_title'] = "Edit";
+
+        $this->view('edit', $data);
+        show($data);
+
+        if (isset($_POST['update'])) {
+            // Handle the update form submission
+            if (count($_POST) > 0) {
+                show($_POST);
+                // // show($rows);
+                // $checkout = new Checkout_Model();
+                // $checkout->save_checkout($_POST, $rows);
+                // unset($_SESSION['CART']);
+                // // header("Location: " . ROOT . "Thankyou");
+            }
         }
     }
 }

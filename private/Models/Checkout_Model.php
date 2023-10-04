@@ -47,6 +47,24 @@ class Checkout_Model extends Model
             $query2 = "insert into order_details (order_id,i_name,qty,i_price,total,i_temId) values (:order_id,:i_name,:qty,:price,:total,:i_temId)";
 
             $result = $order_details->write($query2, $data);
+            // set cookie edit limit for 2 minutes
+           
+
+
+       
+
         }
+        $_SESSION['user'] = $POST['phone'];
+        setcookie("edit-limit", "You only can edit for 2 minutes", time() + 10, "/");
+        setcookie("msg", "You only can edit for 2 minutes", time() - 3600, "/");
+        // redirect(ROOT);
+
+        // alert if coodie is not set
+        // print the coodie
+      
+         
+            
+             //  set session for user with phone no 
+         
     }
 }

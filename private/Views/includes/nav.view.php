@@ -21,7 +21,7 @@
                         Dropdown link
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="<?= ROOT ?>/Edit" id=" editButton">Edit</a></li>
+                        <li><a class="dropdown-item" href="<?= ROOT ?>/Edit<?php if(isset($_SESSION['user'])) echo "?phone=". $_SESSION['user'] ?>" id=" editButton">Edit</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>

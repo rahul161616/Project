@@ -37,7 +37,7 @@
                                         <span class="input-group-btn">
                                             <a class="btn btn-default" href="<?= ROOT ?>/add_to_cart/subtract_quantity/<?= $row->id ?>">-</a>
                                         </span>
-                                        <input oninput="edit_quantity(this.value,'<?= $row->id ?>')" type="text" class="form-control" value="<?= $row->cart_qty ?>" name="quantity">
+                                        <input oninput="edit_quantity(this.value,'<?= $row1->id ?>')" type="text" class="form-control" value="<?= $row->cart_qty ?>" name="quantity">
                                         <span class="input-group-btn">
                                             <a class="btn btn-default" href="<?= ROOT ?>/add_to_cart/add_quantity/<?= $row->id ?>">+</a>
                                         </span>
@@ -80,6 +80,8 @@
         </div>
 
     </div>
+    <?php $this->view('includes/timer'); ?>
+    <?php $this->view('includes/footer'); ?>
     <script>
         function edit_quantity(quantity, id) { //send value to ajax
             if (isNaN(quantity))
@@ -125,5 +127,3 @@
             }
         }
     </script>
-    <?php $this->view('includes/timer'); ?>
-    <?php $this->view('includes/footer'); ?>

@@ -2,9 +2,11 @@
 
 function show($data)
 {
+    echo "<hr>";
     echo "<pre>";
     print_r($data);
     echo "</pre>";
+    echo "<hr>";
 }
 function check_error()
 {
@@ -12,6 +14,13 @@ function check_error()
         echo  $_SESSION['ERROR'];
         unset($_SESSION['ERROR']);
     }
+}
+
+function redirect($value)
+{
+    header("Location: " . $value);
+    die;
+
 }
 function esc($data)
 {
