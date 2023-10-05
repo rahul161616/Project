@@ -4,10 +4,42 @@ Loading is done in from the main controller-->
 <?php $this->view('includes/nav'); ?>
 
 
-<div class="col-lg-4 col-md-6 col-sm-12 my-3">
-    <div class="card shadow">
+<style>
+    img{
+    display: inline-block;
+    max-height: 250px;
+   min-height: 250px;
+  width: 420px;
+   padding: 20px 10px;
+   border-radius: 50px;
+   background-color: aliceblue;
 
-        <div class="row text-center py-5">
+}
+
+.sign{
+    font-size: 40px;
+
+}
+
+input{
+    position: relative;
+    bottom: 10px;
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    text-align: center;
+    
+}
+
+
+h1{
+    font-size: 3rem;
+    
+}
+
+
+</style>
+
             <div class="row text-center py-5">
                 <?php
 

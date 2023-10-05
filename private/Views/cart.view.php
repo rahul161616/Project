@@ -2,6 +2,12 @@
 <?php $this->view('includes/header'); ?>
 <?php $this->view('includes/nav'); ?>
 
+<style>
+    input {
+        width: 200px;
+    }
+</style>
+
 <body>
     <div class="container">
         <div class="row">
@@ -64,14 +70,14 @@
             </table>
         </div>
 
-        <div class="col-lg-3">
+        <div >
             <div class="border bg-light rounded p-4">
                 <h3>Grand Total: <?= number_format($sub_total) ?></h3>
                 <h4 class="text-right" id='gtotal'></h4>
-                <a href="<?= ROOT ?>/home" class="btn btn-primary btn-block">
+                <a href="<?= ROOT ?>/home" class="btn btn-block">
                     <input type="button" class="btn btn-warning pull-left" value="< Continue Shopping" name="">
                 </a>
-                <a href="<?= ROOT ?>/checkout" class="btn btn-primary btn-block">
+                <a href="<?= ROOT ?>/checkout" class="btn  btn-block">
                     <input type="button" class="btn btn-warning pull-right" value="Checkout >" name="">
                 </a>
 
