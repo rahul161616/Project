@@ -4,15 +4,29 @@ $this->view('includes/nav'); ?>
 
 
 <style>
-   .new {
+a.btn-primary,
+a.btn-primary:hover,
+a.btn-primary:active,
+a.btn-primary:visited,
+a.btn-primary:focus  {
+      background-color: white !important;
+    border-color: white !important;
+}
+  
+  .new {
         width: 200px;
         
     }
 
-    input{
-        writing-mode: sideways-lr;
-    }
+   input{
+    text-align: left;
+    width: 50px;
+   }
 </style>
+
+
+
+
 <div class="mb-3">
     <?php if (is_array($rows)) : ?>
 
@@ -63,11 +77,11 @@ $this->view('includes/nav'); ?>
         </label>
         <input class="form-check-input" type="hidden" name="total" id="total" value="<?= $sub_total ?>">
 
-        <a href="<?= ROOT ?>/home" class="btn  btn-block">
-            <input type="button" class="new btn btn-primary pull-left" value="< Continue Shopping" name="">
+        <a href="<?= ROOT ?>/home" class=" btn btn-primary btn-block">
+            <input type="button" class="new btn btn-warning pull-left" value="< Continue Shopping" name="">
         </a>
-        <a href="<?= ROOT ?>/checkout" class="btn btn-block">
-            <input type="submit" class="new btn btn-primary pull-right" value="Pay >" id="pay">
+        <a href="<?= ROOT ?>/checkout" class="btn btn-primary  btn-block">
+            <input type="submit" class="new btn btn-warning pull-right" value="Pay >" id="pay">
         </a>
         </form>
     <?php else : ?>

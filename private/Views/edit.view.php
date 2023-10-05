@@ -9,6 +9,7 @@
     </div>
 <?php } ?>
 
+
 <style>
     input{
         width: 200px;
@@ -42,7 +43,7 @@ ini_set('display_errors', 1);
             </div>
         </div>
 
-        <div class="col-lg-6 ">
+        <div class="col-lg-9">
             <table class="table">
                 <thead class="text-center">
                     <tr>

@@ -3,6 +3,7 @@
 
 
 
+ 
  <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -129,22 +130,23 @@ font-weight: 500;
 
 } 
 
-.admin_login{
-     font-size: 1.75rem;
+.admin_login  {
+     font-size: 2rem;
      font-weight:500;
     margin: 0 10px;
     color: black;
     text-decoration: none;
 }
 
-i.fa-lock{
-    font-size: 2.5rem;
-    margin: 10px;
-    color:black
+
+
+.admin_login:hover {
+    font-size: 1.95rem;
+    font-weight: 500;
+    color: rgb(121, 65, 21);
 }
 
 
-/* footer */
 
 .footer{
    
@@ -164,6 +166,8 @@ i.fa-lock{
     font-size: 2rem;
 }
 </style>
+
+    
 
      <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
@@ -193,7 +197,7 @@ i.fa-lock{
 
             </div>
             
-                    <a class="admin_login" href="<?= ROOT ?>/login"><i class="fa-solid fa-lock"></i> Admin Login</a>
+                    <a class="admin_login" href="<?= ROOT ?>/login"> <i class="fa-solid fa-user"></i> Admin Login </a>
         </div>
     </nav> 
 
@@ -212,6 +216,9 @@ i.fa-lock{
 
 
     </div>
+ 
+
+    
     <div class="footer">
     <a class="social-icon" href="#"><i class="fa-brands fa-facebook"></i></a>
     <a class="social-icon" href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -220,4 +227,15 @@ i.fa-lock{
 </div>
 
    
-<?php $this->view('includes/footer'); ?>
+  
+
+    <!-- bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
+        integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+
+  
+

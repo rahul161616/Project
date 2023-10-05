@@ -10,8 +10,13 @@
 
 
 body{
-     background-image: url("<?php echo ROOT; ?>/Assets/background.jpg");
-    background-size: 150%;
+    margin: 0;
+    padding: 0;
+     background-image: url("<?php echo ROOT; ?>/Assets/customer_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .container{
@@ -25,7 +30,7 @@ body{
      background: linear-gradient(45deg,#37383C, rgb(62, 54, 91));
     opacity: 90%;
     box-shadow: 0 0 10px #000;
-    padding: 80px 50px;
+    padding: 5% 3% 4%;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-radius: 20px;
@@ -36,7 +41,8 @@ button{
      margin: 10px 20px;
     padding: 10px 40px;
 display: inline-block;
-
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+border-radius: 10px;
 
      font-size: 1.5rem;
     text-decoration: none;
@@ -101,9 +107,9 @@ input:hover{
                     <input type="name" placeholder="" name="Aname">
                     <br> -->
                     <label class="password" for="password">Enter Code:</label>
-                    <input type="password" name="Apass">
+                    <input type="password" name="Cpass">
                 </div>
-                <button type="submit" name="Admin_login">Log In</button>
+                <button type="submit" name="Customer_login">Log In</button>
                 <button class="returnHome"><a href="<?= ROOT ?>/mainhome">Home</a></button>
             </form>
         </div>
@@ -118,10 +124,9 @@ input:hover{
         $data = htmlspecialchars($data); //htmlspecialchars converts special characters to html entities
         return $data;
     }
-    if (isset($_POST['Admin_login'])) {
-        $admin_name = $_POST['Aname'];
-        $admin_name = input_filter($admin_name);
-        $admin_pass = $_POST['Apass'];
+    if (isset($_POST['Customer_login'])) {
+       
+        $customer_code = $_POST['Cpass'];
         $admin_pass = input_filter($admin_pass);
         $admin_name = mysqli_real_escape_string($con, $admin_name); //mysqli_real_escape_string escapes special characters in a string for use in an SQL statement (SQL injection)    
         $admin_pass = mysqli_real_escape_string($con, $admin_pass); //mysqli_real_escape_string escapes special characters in a string for use in an SQL statement (SQL injection)

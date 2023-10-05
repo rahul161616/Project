@@ -3,6 +3,11 @@ Loading is done in from the main controller-->
 <?php $this->view('includes/header'); ?>
 <?php $this->view('includes/nav'); ?>
 
+ <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 <style>
     img{
@@ -33,11 +38,26 @@ input{
 
 
 h1{
-    font-size: 3rem;
+    font-size: 2.5rem;
     
 }
+ span , i{
+    font-size: 1.15rem;
+ }
 
+ button{
+    background-color: #E4A11B;
+    border: 2px solid #E4A11B;
+    border-radius: 7px;
+    font-weight: 400;
+ }
 
+button:hover{
+    background-color: black;
+    border: 2px solid black;
+    transition: 0.7s;
+    color: #E4A11B;
+}
 </style>
 
             <div class="row text-center py-5">
@@ -47,7 +67,7 @@ h1{
                 {
                     $element = "     
        
-                          <div class=\"col-lg-4 col-md-6 col-sm-12 my-3\">
+                          <div class=\"col-lg-4 col-md-6 col-sm-12 \">
                            <form method=\"POST\" form action=\"" . ROOT . "/add_to_cart/" . $i_temId . "\">
                           <div class=\"card shadow\">
                            <div>
@@ -59,7 +79,7 @@ h1{
                             <h4>$i_price</h4>
 
 
-                            <button class=\"btn btn-warning add-to-cart \" type=\"submit\">$i_content <i
+                            <button class=\"   px-4 py-2 add-to-cart \" type=\"submit\"><span>$i_content</span> <i
                                     class=\"fa-solid fa-utensils\"></i></button>
                                     
                            </div>
@@ -83,5 +103,11 @@ h1{
                 ?>
             </div>
         </div>
-        <?php $this->view('includes/timer'); ?>
+
+<?php $this->view('includes/timer'); ?>
         <?php $this->view('includes/footer'); ?>
+       
+            
+
+        
+        

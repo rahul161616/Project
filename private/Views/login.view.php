@@ -9,7 +9,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="../Views/includes/login.view.css">
 </head>
-
+ <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
     
 
@@ -32,10 +35,10 @@
 button{
    
      margin: 10px 20px;
-    padding: 10px 40px;
+    padding: 8px 40px;
 display: inline-block;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
+border-radius: 10px;
      font-size: 1.5rem;
     text-decoration: none;
     color: rgb(58, 199, 207);
@@ -44,7 +47,9 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 500;
    
 } 
-    
+    i{
+        font-size: 1.5rem;
+    }
 
 a{
     text-decoration: none;
@@ -65,10 +70,9 @@ input{
     outline: none;
 	
 	border-bottom: .2rem solid #ba933f;
-	
+	font-weight: 500;
 	border-radius: .2em .2em 0 0;
 	padding: .4em;
-	color: #060405;
     padding: 10px;
     margin: 10px;
 }
@@ -76,6 +80,12 @@ input{
 .password{
     margin-left: 5px;
 }
+
+button:hover{
+   
+    border-bottom: 3px solid rgb(58, 199, 207);
+    transition: 0.7s;
+} 
 </style>
 
 <body>
@@ -84,11 +94,11 @@ input{
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
                 <h1> Admin Login</h1>
                 <div class="main">
-                    <label class="username" for="username">Username:</label>
-                    <input type="name" placeholder="" name="Aname">
+                    <label class="username" for="username"><i class="fa-solid fa-user"></i></label>
+                    <input type="name" placeholder="Usernmae" name="Aname">
                     <br>
-                    <label class="password" for="password">Password:</label>
-                    <input type="password" name="Apass">
+                    <label class="password" for="password"><i class="fa-solid fa-lock"></i></label>
+                    <input type="password" placeholder="Password" name="Apass">
                 </div>
                 <button type="submit" name="Admin_login">Log In</button>
                 <button class="returnHome"><a href="<?= ROOT ?>/mainhome">Home</a></button>
