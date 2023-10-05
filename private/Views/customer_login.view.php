@@ -1,18 +1,18 @@
 
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../Views/includes/login.view.css">
-</head>
 
 <style>
-    
+    *{
+        margin: 0;
+        padding: 0;
+    }
 
+
+body{
+     background-image: url("<?php echo ROOT; ?>/Assets/background.jpg");
+    background-size: 150%;
+}
 
 .container{
     display: flex;
@@ -22,7 +22,9 @@
 }
 
 .login{
-    background: linear-gradient(45deg,rgb(180, 220, 231), rgb(238, 236, 245));
+     background: linear-gradient(45deg,#37383C, rgb(62, 54, 91));
+    opacity: 90%;
+    box-shadow: 0 0 10px #000;
     padding: 80px 50px;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -34,7 +36,7 @@ button{
      margin: 10px 20px;
     padding: 10px 40px;
 display: inline-block;
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 
      font-size: 1.5rem;
     text-decoration: none;
@@ -76,18 +78,29 @@ input{
 .password{
     margin-left: 5px;
 }
+
+button:hover{
+    border: 3px solid rgb(58, 199, 207);
+    transition: 0.7s;
+    
+}
+input:hover{
+    border: 3px solid black;
+    transition: 0.7s;
+    
+}
 </style>
 
 <body>
     <div class="container">
         <div class="login">
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
-                <h1> Admin Login</h1>
+                <h1> Customer Login</h1>
                 <div class="main">
-                    <label class="username" for="username">Username:</label>
+                    <!-- <label class="username" for="username">Username:</label>
                     <input type="name" placeholder="" name="Aname">
-                    <br>
-                    <label class="password" for="password">Password:</label>
+                    <br> -->
+                    <label class="password" for="password">Enter Code:</label>
                     <input type="password" name="Apass">
                 </div>
                 <button type="submit" name="Admin_login">Log In</button>
