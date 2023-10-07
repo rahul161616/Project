@@ -3,225 +3,223 @@
 
 
 
- <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<style> * {
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+      }
 
-        body {
+      body {
 
-            background-color: rgb(235, 180, 113);
-        }
+          background-color: rgb(235, 180, 113);
+      }
 
-        img {
-            width: 100%;
-            border-radius: 30px;
-            margin-left: 7%;
-        }
+      img {
+          width: 100%;
+          border-radius: 30px;
+          margin-left: 7%;
+      }
 
-        .row a {
-            padding: 0.75em 1em;
-            background-color: rgb(243, 230, 230);
-            font-size: 1.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            color: black;
-            margin: 0 15%;
-            font-weight: 500;
-            color: blueviolet;
-            border: 2px solid rgb(121, 65, 21);
+      .row a {
+          padding: 0.75em 1em;
+          background-color: rgb(243, 230, 230);
+          font-size: 1.5rem;
+          text-decoration: none;
+          border-radius: 50px;
+          color: black;
+          margin: 0 15%;
+          font-weight: 500;
+          color: blueviolet;
+          border: 2px solid rgb(121, 65, 21);
 
-        }
+      }
 
-        .row {
+      .row {
 
-            /* background-color: green; */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 50px 7%  ;
-            max-width: 100%;
-
-             
-
-        }
-
-
-        .mida{
-                  margin-bottom: 30px;
-                  
-
-        }
-
-
-        h1 {
-            font-size: 4.5rem;
-            font-weight: 500;
-            margin-left:30px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-            color: rgb(80, 36, 36);
-        }
-
-        h3{
-        
-            margin-top: -3px;
-            margin-bottom: 30px;
-           
-            color: black;
-        }
-
-        span {
-            font-size: larger;
-            margin-right: 2px;
-        }
+          /* background-color: green; */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 50px 7%;
+          max-width: 100%;
 
 
 
-/* navbar */
-
- nav {
-    border-bottom: 3px solid rgb(208, 156, 93);
-    /* margin-bottom: -20px; */
-    /* background-color: rgb(208, 156, 93);; */
-   
-}
-.navbar-brand{
-    font-size: 2.5rem;
-    font-weight: 500;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-            color: rgb(80, 36, 36);
-}
-
-.nav-item{
-    font-size: 1.5rem;
-    margin: 0 10px;
-    color: brown;
-    
-}
-      
-.container-fluid{
-    margin: 0px 30px;
- display: flex;
- justify-content: end;
-    
-    
-}
-
-.active{
-   
-    font-weight: 600;
-}
-
-ul{
-    display: flex;
-}
-
-.nav-item:hover{
-font-size: 1.75rem;
-font-weight: 500;
+      }
 
 
-} 
-
-.admin_login{
-     font-size: 1.75rem;
-     font-weight:500;
-    margin: 0 10px;
-    color: black;
-    text-decoration: none;
-}
-
-i.fa-lock{
-    font-size: 2.5rem;
-    margin: 10px;
-    color:black
-}
+      .mida {
+          margin-bottom: 30px;
 
 
-/* footer */
+      }
 
-.footer{
-   
-   display: flex;
-   justify-content: center;
-}
 
-.social-icon{
-    font-size: 1.75rem;
-    margin: 40px 30px 0 30px;
-    color: rgb(250, 233, 211);
-    
-}
+      h1 {
+          font-size: 4.5rem;
+          font-weight: 500;
+          margin-left: 30px;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-.social-icon:hover{
-    color: rgb(254, 223, 231);
-    font-size: 2rem;
-}
-</style>
-  
+          color: rgb(80, 36, 36);
+      }
+
+      h3 {
+
+          margin-top: -3px;
+          margin-bottom: 30px;
+
+          color: black;
+      }
+
+      span {
+          font-size: larger;
+          margin-right: 2px;
+      }
+
+
+
+      /* navbar */
+
+      nav {
+          border-bottom: 3px solid rgb(208, 156, 93);
+          /* margin-bottom: -20px; */
+          /* background-color: rgb(208, 156, 93);; */
+
+      }
+
+      .navbar-brand {
+          font-size: 2.5rem;
+          font-weight: 500;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+          color: rgb(80, 36, 36);
+      }
+
+      .nav-item {
+          font-size: 1.5rem;
+          margin: 0 10px;
+          color: brown;
+
+      }
+
+      .container-fluid {
+          margin: 0px 30px;
+          display: flex;
+          justify-content: end;
+
+
+      }
+
+      .active {
+
+          font-weight: 600;
+      }
+
+      ul {
+          display: flex;
+      }
+
+      .nav-item:hover {
+          font-size: 1.75rem;
+          font-weight: 500;
+
+
+      }
+
+      .admin_login {
+          font-size: 1.75rem;
+          font-weight: 500;
+          margin: 0 10px;
+          color: black;
+          text-decoration: none;
+      }
+
+      i.fa-lock {
+          font-size: 2.5rem;
+          margin: 10px;
+          color: black
+      }
+
+
+      /* footer */
+
+      .footer {
+
+          display: flex;
+          justify-content: center;
+      }
+
+      .social-icon {
+          font-size: 1.75rem;
+          margin: 40px 30px 0 30px;
+          color: rgb(250, 233, 211);
+
+      }
+
+      .social-icon:hover {
+          color: rgb(254, 223, 231);
+          font-size: 2rem;
+      }
+  </style>
+
   <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="<?= ROOT ?>/mainhome">FOOD HUB</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="right collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="<?= ROOT ?>/mainhome">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="<?= ROOT ?>/about_us"> About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= ROOT ?>/customer_login">Orders</a>
-                    </li>
-                    
-
-
-
-
-            </div>
-
-          
-
-        </div>
-    </nav>
-
-
-
-    <div class="row">
-        <div class="mida col-lg-6 col-md-6 col-sm-12 ">
-            <h1>Khaja Ghar</h1>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima eaque culpa, dolorem quod ab omnis aut minus, illum hic, doloribus distinctio asperiores modi blanditiis excepturi. Nihil voluptatum porro voluptas earum!</h3>
-            
-        </div>
-        <div class="mida col-lg-6 col-md-6 col-sm-12 ">
-            <img src="<?php echo ROOT; ?>/Assets/about_us.png" alt="food.png">
-        </div>
-
-
-
-    </div>
+      <div class="container-fluid">
+          <a class="navbar-brand" href="<?= ROOT ?>/mainhome">FOOD HUB</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="right collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link " aria-current="page" href="<?= ROOT ?>/home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" href="<?= ROOT ?>/about_us"> About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="<?= ROOT ?>/feedBack">FeedBack</a>
+                  </li>
 
 
 
 
 
-<?php $this->view('includes/footer'); ?>
+          </div>
 
-<div class="footer">
-    <a class="social-icon" href="#"><i class="fa-brands fa-facebook"></i></a>
-    <a class="social-icon" href="#"><i class="fa-brands fa-instagram"></i></a>
-    <a class="social-icon" href="#"><i class="fa-brands fa-youtube"></i></a>
-    <a class="social-icon" href="#"><i class="fa-brands fa-tiktok"></i></a>
-</div>
+
+
+      </div>
+  </nav>
+
+
+
+  <div class="row">
+      <div class="mida col-lg-6 col-md-6 col-sm-12 ">
+          <h1>Khaja Ghar</h1>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima eaque culpa, dolorem quod ab omnis aut minus, illum hic, doloribus distinctio asperiores modi blanditiis excepturi. Nihil voluptatum porro voluptas earum!</h3>
+
+      </div>
+      <div class="mida col-lg-6 col-md-6 col-sm-12 ">
+          <img src="<?php echo ROOT; ?>/Assets/about_us.png" alt="food.png">
+      </div>
+
+
+
+  </div>
+
+
+
+
+
+  <?php $this->view('includes/footer'); ?>
+
+  <div class="footer">
+      <a class="social-icon" href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a class="social-icon" href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a class="social-icon" href="#"><i class="fa-brands fa-youtube"></i></a>
+      <a class="social-icon" href="#"><i class="fa-brands fa-tiktok"></i></a>
+  </div>

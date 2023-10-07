@@ -2,11 +2,11 @@
 
 function show($data)
 {
-    echo "<hr>";
+    // echo "<hr>";
     echo "<pre>";
     print_r($data);
     echo "</pre>";
-    echo "<hr>";
+    // echo "<hr>";
 }
 function check_error()
 {
@@ -26,3 +26,5 @@ function esc($data)
 {
     return addslashes($data);
 }
+
+ 

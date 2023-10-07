@@ -10,7 +10,7 @@
 <?php } ?>
 
 <style>
-    input{
+    input {
         width: 200px;
     }
 </style>
@@ -55,37 +55,35 @@ ini_set('display_errors', 1);
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    <?php 
-                    
-                    
-                    if (isset($rows1) && is_array($rows1)) {
-                        show($rows1);
+                    <?php
 
-                        ?>
-                        <?php $sr = 1; ?>
-                        <?php foreach ($rows1 as $row1) { ?>
+
+                    if (isset($rows1) && is_array($rows1)) {
+                       
+                        $sr = 1;
+                        foreach ($rows1 as $row1) { ?>
                             <input class="w-100" type="text" name="orders_id" value="<?= $row1->order_id ?>">
                             <tr>
-                                <th scope='row1'><?= $sr; ?></th>
+                                <th scope='row'><?= $sr; ?></th>
                                 <td><?= $row1->i_name; ?></td>
-                                <td><?= $row1->i_price; ?><input type='hidden' class='iprice' value="<?= $row1->i_price; ?>"></td>
+                                <!-- <td><?= $row1->i_price; ?><input type='text' name="<?=$row1->i_name;?>" class='iprice' value="<?= $row1->i_price; ?>"> -->
+                                </td>
                                 <td>
-
                                     <div class="input-group">
                                         <span class="input-group-btn">
                                             <button class="btn btn-default" type="button" onclick="decrementQuantity('<?= $row1->id ?>')">-</button>
                                         </span>
-                                        
+
                                         <input type="number" class="form-control" value="<?= $row1->qty ?>" name="<?= $row1->id ?>">
                                         <span class="input-group-btn">
                                             <button class="btn btn-default" type="button" onclick="incrementQuantity('<?= $row1->id ?>')">+</button>
                                         </span>
                                     </div>
                                 </td>
-                                <td class='i_total'><?= ($row1->i_price * $row1->qty); ?></td>
+                                <td data-item="<?= $row1->id ?>" class='i_total'><?= ($row1->i_price * $row1->qty); ?></td>
                             </tr>
-                            <?php $sr++; ?>
-                        <?php } ?>
+                        <?php $sr++;
+                        } ?>
                     <?php } else { ?>
                         <tr>
                             <td colspan="7">No Items were found in the list</td>
@@ -95,12 +93,12 @@ ini_set('display_errors', 1);
             </table>
 
             <input name="updates" type="submit" class="btn btn-success" value="Update">
-            <input name="delete" type="submit" class="btn btn-success"  value="Delete All And reorder">
+            <input name="delete" type="submit" class="btn btn-success" value="Delete All And reorder">
 
         </div>
     </div>
 </form>
-<!-- <div class="col-lg-3">
+<div class="col-lg-3">
     <div class="border bg-light rounded p-4">
         <h3>Grand Total: <?= number_format($row1->total) ?></h3>
         <h4 class="text-right" id='gtotal'></h4>
@@ -109,13 +107,14 @@ ini_set('display_errors', 1);
         </a>
     </div>
 </div>
-</div> -->
+</div>
 <script>
     function incrementQuantity(itemId) {
         var quantityInput = document.querySelector('input[name="quantity[' + itemId + ']"]');
         if (quantityInput) {
             quantityInput.value = parseInt(quantityInput.value) + 1;
         }
+
     }
 
     function decrementQuantity(itemId) {
@@ -123,7 +122,29 @@ ini_set('display_errors', 1);
         if (quantityInput && parseInt(quantityInput.value) > 0) {
             quantityInput.value = parseInt(quantityInput.value) - 1;
         }
+
+    }
+
+    function updateTotal(itemId) {
+        var quantityInput = document.querySelector('input[name="quantity[' + itemId + ']"]');
+        var priceInput = document.querySelector('.iprice[value="' + itemId + '"]');
+        var totalElement = document.querySelector('td[data-item="' + itemId + '"].i_total');
+        if (quantityInput && priceInput && totalElement) {
+            var quantity = parseInt(quantityInput.value);
+            var price = parseFloat(priceInput.value);
+            var total = quantity * price;
+            totalElement.innerText = total.toFixed(2); // Format to two decimal places
+            updateGrandTotal(); // Call the function to update the Grand Total
+        }
+    }
+
+    function updateGrandTotal() {
+        var totalElements = document.querySelectorAll('td.i_total');
+        var grandTotal = 0;
+        totalElements.forEach(function(element) {
+            grandTotal += parseFloat(element.innerText);
+        });
+        document.getElementById('gtotal').innerText = grandTotal.toFixed(2); // Update the Grand Total
     }
 </script>
-<?php $this->view('includes/timer'); ?>
 <?php $this->view('includes/footer'); ?>

@@ -36,23 +36,25 @@ class Checkout_Model extends Model
             $total = $result2[0]->total;
         }
         $order_details = new Order_details();
-        foreach ($rows as $row) {
-            $data  = array();
-            $data['order_id'] = $orderid;
-            $data['i_name'] = $row->i_name;
-            $data['qty'] = $row->cart_qty;
-            $data['price'] = $row->i_price;
-            $data['total'] = $total;
-            $data['i_temId'] = $row->i_temId;
-            $query2 = "insert into order_details (order_id,i_name,qty,i_price,total,i_temId) values (:order_id,:i_name,:qty,:price,:total,:i_temId)";
 
-            $result = $order_details->write($query2, $data);
-            // set cookie edit limit for 2 minutes
-           
+        if (is_array($rows) && !empty($rows)) { // Check if $rows is an array and not empty
 
+            foreach ($rows as $row) {
+                $data  = array();
+                $data['order_id'] = $orderid;
+                $data['i_name'] = $row->i_name;
+                $data['qty'] = $row->cart_qty;
+                $data['price'] = $row->i_price;
+                $data['total'] = $total;
+                $data['i_temId'] = $row->i_temId;
+                $query2 = "insert into order_details (order_id,i_name,qty,i_price,total,i_temId) values (:order_id,:i_name,:qty,:price,:total,:i_temId)";
 
-       
+                $result = $order_details->write($query2, $data);
+                // set cookie edit limit for 2 minutes
 
+            }
+        } else {
+            echo "No data found";
         }
         $_SESSION['user'] = $POST['phone'];
         setcookie("edit-limit", "You only can edit for 2 minutes", time() + 10, "/");
@@ -61,10 +63,10 @@ class Checkout_Model extends Model
 
         // alert if coodie is not set
         // print the coodie
-      
-         
-            
-             //  set session for user with phone no 
-         
+
+
+
+        //  set session for user with phone no 
+
     }
 }

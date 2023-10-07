@@ -1,1 +1,0 @@
- <span id="countdownTimer">2:00</span>

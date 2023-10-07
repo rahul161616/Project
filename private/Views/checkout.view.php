@@ -80,7 +80,6 @@ $this->view('includes/nav'); ?>
 
 </div>
 </div>
-<?php $this->view('includes/timer'); ?>
 <?php $this->view('includes/footer');
 ?>
 <script>

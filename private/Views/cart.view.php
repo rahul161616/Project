@@ -70,7 +70,7 @@
             </table>
         </div>
 
-        <div >
+        <div>
             <div class="border bg-light rounded p-4">
                 <h3>Grand Total: <?= number_format($sub_total) ?></h3>
                 <h4 class="text-right" id='gtotal'></h4>
@@ -86,7 +86,7 @@
         </div>
 
     </div>
-    <?php $this->view('includes/timer'); ?>
+
     <?php $this->view('includes/footer'); ?>
     <script>
         function edit_quantity(quantity, id) { //send value to ajax
