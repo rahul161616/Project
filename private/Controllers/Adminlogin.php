@@ -53,12 +53,12 @@ class Adminlogin extends Controller
             if ($result) {
                 //login successful
                 $_SESSION['admin_name'] = $admin_name;
-                redirect(ROOT . '/Item_menu');
+                redirect('Dashboard');
             } else {
-                 // Login failed, display an error message
+                // Login failed, display an error message
                 $_SESSION['login_error'] = "Login Failed";
                 redirect(ROOT . '/login');
-                show($_POST['/Adminlogin']);
+                // show($_POST['/Adminlogin']);
             }
         }
         // echo "Hello";

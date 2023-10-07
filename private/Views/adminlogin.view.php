@@ -1,4 +1,5 @@
-<?php show($_SESSION); ?>
+<!-- <?php //show($_SESSION); 
+        ?> -->
 <!DOCTYPE html>
 <html lang="en">
 
