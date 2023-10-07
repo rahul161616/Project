@@ -1,5 +1,13 @@
 
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Views/includes/login.view.css">
+</head>
 
 
 <style>
@@ -27,10 +35,11 @@ body{
 }
 
 .login{
+    margin: 10px;
      background: linear-gradient(45deg,#37383C, rgb(62, 54, 91));
     opacity: 90%;
     box-shadow: 0 0 10px #000;
-    padding: 5% 3% 4%;
+    padding: 80px 50px;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-radius: 20px;
@@ -87,7 +96,7 @@ input{
 
 button:hover{
     border: 3px solid rgb(58, 199, 207);
-    transition: 0.7s;
+    transition: 0.5s;
     
 }
 input:hover{
@@ -103,9 +112,7 @@ input:hover{
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
                 <h1> Customer Login</h1>
                 <div class="main">
-                    <!-- <label class="username" for="username">Username:</label>
-                    <input type="name" placeholder="" name="Aname">
-                    <br> -->
+                    
                     <label class="password" for="password">Enter Code:</label>
                     <input type="password" name="Cpass">
                 </div>

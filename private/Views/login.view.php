@@ -14,7 +14,14 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
-    
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+/* body{
+      background: linear-gradient(45deg,rgb(120, 120, 120), rgb(239, 239, 240));
+} */
 
 
 .container{
@@ -22,11 +29,13 @@
     align-items: center;
     height: 100vh;
     justify-content: center;
+    
 }
 
 .login{
+    margin: 5px;
     background: linear-gradient(45deg,rgb(180, 220, 231), rgb(238, 236, 245));
-    padding: 80px 50px;
+    padding: 80px 55px 65px ;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-radius: 20px;
@@ -34,7 +43,7 @@
 
 button{
    
-     margin: 10px 20px;
+     margin: 15px 20px;
     padding: 8px 40px;
 display: inline-block;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -82,10 +91,10 @@ input{
 }
 
 button:hover{
-   
-    border-bottom: 3px solid rgb(58, 199, 207);
-    transition: 0.7s;
-} 
+    border: 3px solid #ba933f;
+    transition: 0.5s;
+    
+}
 </style>
 
 <body>

@@ -3,9 +3,39 @@
 <?php $this->view('includes/nav'); ?>
 
 <style>
-    input {
-        width: 200px;
-    }
+    input.btn {
+            width: 200px;
+            height: 50px;
+
+           
+
+            /* padding: 10px ; */
+            box-shadow: 1px 2px 2px 1px #9ba128;
+            
+            font-size: 1.25rem;
+            font-weight: 400;
+            border-radius: 10px;
+            opacity: 90%;
+        }
+
+        .pull-left {
+
+            font-weight: 400;
+        }
+
+        input.btn:hover {
+            background-color: rgb(225, 222, 222);
+            color: rgb(15, 15, 15);
+            font-weight: 450;
+            border: 1px solid black;
+        }
+
+        .pull-left:hover {
+
+            border: 3px solid black;
+            height: 55px;
+        }
+        
 </style>
 
 <body>
@@ -15,7 +45,7 @@
             <h1>My Items</h1>
         </div>
 
-        <div class="col-lg-9">
+        <div class="col-lg-9  ">
             <table class="table">
                 <thead class="text-center">
                     <tr>
@@ -75,10 +105,10 @@
                 <h3>Grand Total: <?= number_format($sub_total) ?></h3>
                 <h4 class="text-right" id='gtotal'></h4>
                 <a href="<?= ROOT ?>/home" class="btn btn-block">
-                    <input type="button" class="btn btn-warning pull-left" value="< Continue Shopping" name="">
+                    <input type="button" class="btn btn-warning pull-left" value=" Continue Shopping" name="">
                 </a>
                 <a href="<?= ROOT ?>/checkout" class="btn  btn-block">
-                    <input type="button" class="btn btn-warning pull-right" value="Checkout >" name="">
+                    <input type="button" class="btn btn-warning pull-right" value="Checkout " name="">
                 </a>
 
             </div>
@@ -88,6 +118,7 @@
     </div>
     <?php $this->view('includes/timer'); ?>
     <?php $this->view('includes/footer'); ?>
+    
     <script>
         function edit_quantity(quantity, id) { //send value to ajax
             if (isNaN(quantity))

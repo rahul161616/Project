@@ -11,9 +11,28 @@
 
 
 <style>
-    input{
-        width: 200px;
+   .btn-success{
+        width: 150px;
+        height: 50px;
+        box-shadow: 0px 0px 3px 0px #2C6322;
+            
+            font-size: 1.25rem;
+            font-weight: 400;
+            border-radius: 10px;
+            opacity: 90%;
     }
+
+.delete_reorder{
+    width: 230px;
+}
+
+     .btn-success:hover {
+            background-color: white;
+            color: #2C632C;
+            font-weight: 500;
+            border: 1px solid black;
+            box-shadow: 0px 0px 0px 0px black;
+        }
 </style>
 <form method="get">
     <table class="table">
@@ -96,7 +115,7 @@ ini_set('display_errors', 1);
             </table>
 
             <input name="updates" type="submit" class="btn btn-success" value="Update">
-            <input name="delete" type="submit" class="btn btn-success"  value="Delete All And reorder">
+            <input name="delete" type="submit" class="btn btn-success delete_reorder"  value="Delete All And reorder">
 
         </div>
     </div>

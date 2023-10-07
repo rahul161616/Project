@@ -4,6 +4,11 @@ $this->view('includes/nav'); ?>
 
 
 <style>
+
+    .wholediv{
+        margin-left: 5%;
+    }
+
 a.btn-primary,
 a.btn-primary:hover,
 a.btn-primary:active,
@@ -14,19 +19,56 @@ a.btn-primary:focus  {
 }
   
   .new {
-        width: 200px;
+         width: 200px;
+            height: 50px;
+
+           
+
+            /* padding: 10px ; */
+            box-shadow: 1px 2px 2px 1px #9ba128;
+            
+            font-size: 1.25rem;
+            font-weight: 400;
+            border-radius: 10px;
+            opacity: 90%;
         
     }
 
-   input{
+    button.btn{
+        width: 180px;
+            height: 40px;
+            font-size: 1.25rem;
+            font-weight: 400;
+            border-radius: 10px;
+            opacity: 90%;
+            box-shadow: 0px 0px 3px 0px blue;
+    }
+
+   .form-control {
     text-align: left;
-    width: 50px;
-   }
+    width: 50%
+}
+
+     input.btn:hover {
+            background-color: rgb(225, 222, 222);
+            color: rgb(15, 15, 15);
+            font-weight: 450;
+            border: 1px solid black;
+        }
+
+        button.btn:hover{
+            background-color: rgb(225, 222, 222);
+            color: blue;
+            font-weight: 450;
+            border: 1px solid black;
+        }
+
+       
 </style>
 
 
 
-
+<div class="wholediv">
 <div class="mb-3">
     <?php if (is_array($rows)) : ?>
 
@@ -70,18 +112,19 @@ a.btn-primary:focus  {
 
 <!-- ... Rest of your HTML ... -->
 
-<div class="col-lg-3">
-    <div class="border bg-light rounded p-4">
+<div class="col-lg-6" >
+    <div class="border bg-light rounded p-4 my-20">
         <label for="total">
             <h3 id='gtotal'>Grand Total:<?= number_format($sub_total) ?></h3>
         </label>
+        <br>
         <input class="form-check-input" type="hidden" name="total" id="total" value="<?= $sub_total ?>">
 
         <a href="<?= ROOT ?>/home" class=" btn btn-primary btn-block">
-            <input type="button" class="new btn btn-warning pull-left" value="< Continue Shopping" name="">
+            <input type="button" class="new btn btn-warning pull-left" value=" Continue Shopping" name="">
         </a>
         <a href="<?= ROOT ?>/checkout" class="btn btn-primary  btn-block">
-            <input type="submit" class="new btn btn-warning pull-right" value="Pay >" id="pay">
+            <input type="submit" class="new btn btn-warning pull-right" value="Pay " id="pay">
         </a>
         </form>
     <?php else : ?>
@@ -91,8 +134,9 @@ a.btn-primary:focus  {
         </div>
     <?php endif; ?>
     </div>
+    </div>
 
-</div>
+
 </div>
 <?php $this->view('includes/timer'); ?>
 <?php $this->view('includes/footer');

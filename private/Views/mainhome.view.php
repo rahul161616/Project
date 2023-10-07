@@ -220,10 +220,10 @@ font-weight: 500;
 
     
     <div class="footer">
-    <a class="social-icon" href="#"><i class="fa-brands fa-facebook"></i></a>
-    <a class="social-icon" href="#"><i class="fa-brands fa-instagram"></i></a>
-    <a class="social-icon" href="#"><i class="fa-brands fa-youtube"></i></a>
-    <a class="social-icon" href="#"><i class="fa-brands fa-tiktok"></i></a>
+    <a class="social-icon" target="_blank" href="#"><i class="fa-brands fa-facebook"></i></a>
+    <a class="social-icon" target="_blank" href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a class="social-icon" target="_blank" href="#"><i class="fa-brands fa-youtube"></i></a>
+    <a class="social-icon" target="_blank" href="#"><i class="fa-brands fa-tiktok"></i></a>
 </div>
 
    
