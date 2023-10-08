@@ -55,7 +55,7 @@
     <div class="content">
         <!-- Your main content goes here -->
         <h1>Welcome to the Dashboard</h1>
-        <p>This is where you can manage your home, orders, and staffs.</p>
+        <h2>This is where you can manage your home, orders, and staffs.</h2>
     </div>
 
 </body>

@@ -19,8 +19,8 @@ class Edit extends Controller
         }
         // 
 
-        echo "This is index function";
-        show($_GET);
+        // echo "This is index function";
+        // show($_GET);
 
         $search_model = new Search_Model();
 
@@ -43,12 +43,12 @@ class Edit extends Controller
         $data['page_title'] = "Edit";
 
         $this->view('edit', $data);
-        show($data);
+        // show($data);
 
         if (isset($_POST['update'])) {
             // Handle the update form submission
             if (count($_POST) > 0) {
-                show($_POST);
+                // show($_POST);
                 // // show($rows);
                 // $checkout = new Checkout_Model();
                 // $checkout->save_checkout($_POST, $rows);

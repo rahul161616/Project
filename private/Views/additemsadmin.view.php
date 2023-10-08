@@ -54,8 +54,8 @@
                         <input type="hidden" name="action" value="update">
                         <h2 class="text-center">Update Product</h2>
                         <div class="form-group">
-                            <label for="update_product_id">Item ID:</label>
-                            <input type="number" name="i_temId" id="i_temId" class="form-control" required>
+                            <label for="update_product_id">ID:</label>
+                            <input type="number" name="id" id="id" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="update_product_name">Item Name:</label>
@@ -76,6 +76,10 @@
                         <div class="form-group">
                             <label for="update_product_image">Item Content:</label>
                             <input type="text" name="i_content" id="i_content" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="update_product_image">Item ID:</label>
+                            <input type="number" name="i_temId" id="i_temId" class="form-control">
                         </div>
                         <br>
                         <div class="form-group text-center">
@@ -113,11 +117,12 @@
                         echo "<img src='" . ROOT . "/Assets/$row->i_img' class='card-img-top'>";
                     }
                     echo "<div class='card-body'>";
-                    echo "<h5 class='card-title'>Product ID: " . $row->i_temId . "</h5>";
+                    echo "<h5 class='card-title'>ID: " . $row->id . "</h5>"; //use id to change
+                    echo "<h5 class='card-title'>Item ID: " . $row->i_temId . "</h5>";
                     echo "<p class='card-text'>Name: " .  $row->i_name . "</p>";
                     echo "<p class='card-text'>Price: $" .  $row->i_price . "</p>";
-                    echo "<p class='card-text'>Alt: $" .  $row->i_alt . "</p>";
-                    echo "<p class='card-text'>Content: $" .  $row->i_content . "</p>";
+                    echo "<p class='card-text'>Alt: " .  $row->i_alt . "</p>";
+                    echo "<p class='card-text'>Content: " .  $row->i_content . "</p>";
                     echo "</div>";
                     echo "</div>";
                     echo "</div>";

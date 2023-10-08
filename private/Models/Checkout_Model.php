@@ -4,7 +4,7 @@ class Checkout_Model extends Model
     protected $table = "user_details_orders";
     public function __construct()
     {
-        echo "Checkout_Model";
+        // echo "Checkout_Model";
     }
     public function save_checkout($POST, $rows)
     {
@@ -57,7 +57,7 @@ class Checkout_Model extends Model
             echo "No data found";
         }
         $_SESSION['user'] = $POST['phone'];
-        setcookie("edit-limit", "You only can edit for 2 minutes", time() + 30, "/");
+        setcookie("edit-limit", "You only can edit for 2 minutes", time() + 60, "/");
         setcookie("msg", "You only can edit for 2 minutes", time() - 3600, "/");
         // redirect(ROOT);
 

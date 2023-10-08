@@ -19,8 +19,8 @@ class Item_menu extends Controller
 
         $this->view('item_menu', $data);
 
-        echo "<pre>";
-        print_r($_POST);
+        // echo "<pre>";
+        // print_r($_POST);
     }
 
     public function getItems(){

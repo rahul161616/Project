@@ -48,21 +48,16 @@ ini_set('display_errors', 1);
                     <tr>
                         <th scope="col">Serial.no</th>
                         <th scope="col">Item Name</th>
-                        <th scope="col">Item Price</th>
                         <th scope="col">Item Quantity</th>
-                        <th scope="col">Item Total</th>
-                        <th scope="col"></th>
+                        <th scope="col">Item Price</th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
                     <?php
-
-
                     if (isset($rows1) && is_array($rows1)) {
-
                         $sr = 1;
                         foreach ($rows1 as $row1) { ?>
-                            <input class="w-100" type="text" name="orders_id" value="<?= $row1->order_id ?>">
+                            <!-- <input class="w-500" type="text" name="orders_id" value=" put <questionmarkequalto //$row1->order_id ?>"> -->
                             <tr>
                                 <th scope='row'><?= $sr; ?></th>
                                 <td><?= $row1->i_name; ?></td>
@@ -71,12 +66,12 @@ ini_set('display_errors', 1);
                                 <td>
                                     <div class="input-group">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button" onclick="decrementQuantity('<?= $row1->id ?>')">-</button>
+                                            <button class="btn btn-default" type="button" onclick="decrementQuantity('<?= $row1->id ?>')"></button>
                                         </span>
 
                                         <input type="number" class="form-control" value="<?= $row1->qty ?>" name="<?= $row1->id ?>">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button" onclick="incrementQuantity('<?= $row1->id ?>')">+</button>
+                                            <button class="btn btn-default" type="button" onclick="incrementQuantity('<?= $row1->id ?>')"></button>
                                         </span>
                                     </div>
                                 </td>
@@ -99,6 +94,7 @@ ini_set('display_errors', 1);
         </div>
     </div>
 </form>
+<br>
 <div class="col-lg-3">
     <div class="border bg-light rounded p-4">
         <h3>Grand Total: <?= number_format($row1->total) ?></h3>

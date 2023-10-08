@@ -4,12 +4,12 @@ $this->view('includes/nav'); ?>
 
 
 <style>
-   .new {
+    .new {
         width: 200px;
-        
+
     }
 
-    input{
+    input {
         writing-mode: sideways-lr;
     }
 </style>
@@ -48,7 +48,8 @@ $this->view('includes/nav'); ?>
 <!-- ... Your existing form fields ... -->
 <button class="btn btn-primary btn-block" id="checkDiscountBtn">Check Discount</button>
 <div>
-    <p>Discount Result:</p>
+    <!-- <p>Discount Result:</p> -->
+    <br>
     <div id="discountResult">
 
     </div> <!-- The discount result will be displayed here -->

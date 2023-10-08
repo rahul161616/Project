@@ -55,9 +55,9 @@
 
 <body>
     <div class="sidebar">
-        <a href="#" id="home">Home</a>
+        <a href="<?= session_destroy();
+                    echo "home"; ?>" id="home">Home</a>
         <a href="<?= ROOT ?>/Admin_order_lookpage" id="admin_order_lookpage">Orders</a>
-        <a href="#" id="staffs">Staffs</a>
         <a href="<?= ROOT ?>/Admin_logout" class="logout-link">Logout</a>
         <a href="<?= ROOT ?>/Admin_feedback_lookpage" id="admin_feedback_lookpage">FeedBack</a>
         <a href="<?= ROOT ?>/Additemsadmin">AddItems</a>

@@ -10,7 +10,7 @@ class Updateordersbyadmin extends Controller
                 if ($action === 'create') {
                     $this->add();
                 } elseif ($action === 'update') {
-                    $this->updates($_POST['i_temId']);
+                    $this->updates($_POST['id']);
                 } elseif ($action === 'delete') {
                     $this->delete();
                 } else {
@@ -22,41 +22,37 @@ class Updateordersbyadmin extends Controller
 
     function uploadImage()
     {
-        // Check if a file was uploaded
-
-        if (isset($_FILES['product_image']) && $_FILES['product_image']['error'] === UPLOAD_ERR_OK) {
-            $uploadedFile = $_FILES['product_image'];
-
-            // Get the file name and extension
+        if (isset($_FILES['i_img']) && $_FILES['i_img']['error'] === UPLOAD_ERR_OK) {
+            $uploadedFile = $_FILES['i_img'];
             $fileExtension = pathinfo($uploadedFile['name'], PATHINFO_EXTENSION);
-
-            // Generate a unique file name to prevent overwriting
-            $uniqueFileName = uniqid('product_image_') . '.' . $fileExtension;
-
-            // Move the uploaded file to the current directory
-            if (move_uploaded_file($uploadedFile['tmp_name'], $uniqueFileName)) {
-                // Return the URL of the uploaded image (assuming it's in the same directory as the script)
+            $uniqueFileName = uniqid('i_img_') . '.' . $fileExtension;
+            $uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . '/Project/public/Assets/' . $uniqueFileName; // Full path to your project's public/Assets folder
+            if (move_uploaded_file($uploadedFile['tmp_name'], $uploadDirectory)) {
+                // Return the URL to the uploaded image
                 return $uniqueFileName;
+            } else {
+                echo "Error uploading file.";
             }
+        } else {
+            echo "No file uploaded or an error occurred during upload.";
         }
-        // If no file was uploaded or there was an error, return an empty string
-        return '';
     }
+
     public function add()
     {
         $item_info = new ItemInfoModel();
         // Handle product creation
         $i_name = $_POST['i_name'];
         $i_price = $_POST['i_price'];
-        $i_img = $this->uploadImage(); // Handle image upload and get the image URL
-        $i_content = $_POST['i_content']; // Handle image upload and get the image URL
-        $i_alt = $_POST['i_alt']; // Handle image upload and get the image URL
+        $i_img = $this->uploadImage(); // Get the image URL from uploadImage()
+        $i_content = $_POST['i_content'];
+        $i_alt = $_POST['i_alt'];
         $i_temId = $_POST['i_temId'];
-        $query = "INSERT INTO iteminfo (i_name, i_price, i_img,i_alt,i_content,i_temId) VALUES (:i_name, :i_price,:i_img,:i_alt,:i_content,:i_temId)";
+        $query = "INSERT INTO iteminfo (i_name, i_price, i_img, i_alt, i_content, i_temId) VALUES (:i_name, :i_price, :i_img, :i_alt, :i_content, :i_temId)";
         $data = [
             'i_name' => $i_name,
             'i_price' => $i_price,
-            'i_img' => $i_img,
+            'i_img' => $i_img, // Use the returned image URL
             'i_alt' => $i_alt,
             'i_content' => $i_content,
             'i_temId' => $i_temId,
@@ -64,18 +60,18 @@ class Updateordersbyadmin extends Controller
         $result = $item_info->write($query, $data);
         redirect('Additemsadmin');
     }
+
     public function updates($id)
     {
         $itemInfo = new ItemInfoModel();
         $data = [
             'i_name' => $_POST['i_name'],
             'i_price' => $_POST['i_price'],
-            'i_img' =>  $this->uploadImage(), // Handle image upload and get the image URL
-            'i_alt' => $_POST['i_content'], // Handle image upload and get the image URL
-            'i_content' => $_POST['i_alt'], // Handle image upload and get the image URL
+            'i_img' => $this->uploadImage(), // Get the image URL from uploadImage()
+            'i_alt' => $_POST['i_alt'],
+            'i_content' => $_POST['i_content'],
             'i_temId' => $_POST['i_temId']
         ];
-
 
         $updates = $itemInfo->update($id, $data);
         redirect('Additemsadmin');
@@ -83,7 +79,6 @@ class Updateordersbyadmin extends Controller
 
     public function delete()
     {
-
         $delete = new ItemInfoModel();
         $id = $_POST['i_temId'];
 
