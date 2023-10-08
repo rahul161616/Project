@@ -51,13 +51,13 @@ class Checkout_Model extends Model
 
                 $result = $order_details->write($query2, $data);
                 // set cookie edit limit for 2 minutes
-
+                // redirect(ROOT . '/Checkout/checkout_success');
             }
         } else {
             echo "No data found";
         }
         $_SESSION['user'] = $POST['phone'];
-        setcookie("edit-limit", "You only can edit for 2 minutes", time() + 10, "/");
+        setcookie("edit-limit", "You only can edit for 2 minutes", time() + 30, "/");
         setcookie("msg", "You only can edit for 2 minutes", time() - 3600, "/");
         // redirect(ROOT);
 

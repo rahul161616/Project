@@ -11,13 +11,13 @@ class Edit extends Controller
     {
 
 
-// 
-if(!isset($_COOKIE['edit-limit'])){
+        // 
+        if (!isset($_COOKIE['edit-limit'])) {
             setcookie("msg", "you cannot edit order after 2 minutes", time() + 60, "/");
 
-    redirect(ROOT); 
-} 
-// 
+            redirect(ROOT);
+        }
+        // 
 
         echo "This is index function";
         show($_GET);

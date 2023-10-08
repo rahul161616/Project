@@ -50,12 +50,7 @@
 
 <body>
 
-    <div class="sidebar">
-        <a href="#">Home</a>
-        <a href="<?= ROOT ?>/Admin_order_lookpage">Orders</a>
-        <a href="#">Staffs</a>
-        <a href="<?= ROOT ?>/Admin_logout" class="logout-link">Logout</a>
-    </div>
+    <?php $this->view("includes/sidebar"); ?>
 
     <div class="content">
         <!-- Your main content goes here -->

@@ -10,8 +10,11 @@ class Update extends Controller
     public function index()
     {
         if (isset($_POST['updates'])) {
-
-            $this->update();
+            if (isset($_COOKIE['edit-limit'])) {
+                $this->update();
+            } else {
+                redirect(ROOT);
+            }
         }
         if (isset($_POST['delete'])) {
 
@@ -39,13 +42,13 @@ class Update extends Controller
         unset($_POST['updates']);
         // show($_POST);
         foreach ($res as $row) {
-    
-    
 
 
 
-            $total =  $_POST[$row->id]* $row->i_price;
-        
+
+
+            $total =  $_POST[$row->id] * $row->i_price;
+
 
 
             $data = [
@@ -57,8 +60,9 @@ class Update extends Controller
             $updates = $update->update($row->id, $data);
         }
 
-        
-    
+
+        redirect(ROOT);
+
 
 
 
@@ -72,22 +76,22 @@ class Update extends Controller
 
 
 
-        foreach ($_POST as $key => $value) {
-            show($_POST);
-            if ($key != 'updates') {
-                $price =  esc($_POST['i_price' . $key]);
-                $total = $value * $price;
-                show("key: " . $key . ", value: " . $value . ", price: " . $price . ", total: " . $total);
-                $data = [
-                    'qty' => $value,
-                    'total' => $total
-                ];
-                show("key: " . $key . " value: " . $value);
+        // foreach ($_POST as $key => $value) {
+        //     // show($_POST);
+        //     if ($key != 'updates') {
+        //         $price =  esc($_POST['i_price' . $key]);
+        //         $total = $value * $price;
+        //         // show("key: " . $key . ", value: " . $value . ", price: " . $price . ", total: " . $total);
+        //         $data = [
+        //             'qty' => $value,
+        //             'total' => $total
+        //         ];
+        //         show("key: " . $key . " value: " . $value);
 
 
-                $update->update($key, $data);
-            }
-        }
+        //         $update->update($key, $data);
+        //     }
+        // }
         // redirect(ROOT);
     }
     public function delete()

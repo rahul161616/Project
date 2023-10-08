@@ -5,11 +5,11 @@ class Checkout extends Controller
     protected $table = "iteminfo";
     public function __construct()
     {
-        echo "Status controller";
+        // echo "Status controller";
     }
     public function index($id = '') //default value for exception handling if no id is passed
     {
-        echo "Status controller" . $id;
+        // echo "Status controller" . $id;
         $iteminfo = new ItemInfoModel();
         $rows = false;
         $prod_ids = array();
@@ -55,7 +55,7 @@ class Checkout extends Controller
             $checkout = new Checkout_Model();
             $checkout->save_checkout($_POST, $rows);
             unset($_SESSION['CART']);
-            // header("Location: " . ROOT . "/edit");
+            header("Location: " . ROOT . "/edit?phone=" . $_SESSION['user']);
         }
         $this->view("checkout", $data);
     }

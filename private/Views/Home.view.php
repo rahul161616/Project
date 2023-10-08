@@ -1,5 +1,6 @@
-<?php   $this->view('includes/header'); ?>
-<?php  // include "includes/header.view.php"; ?>
+<?php $this->view('includes/header'); ?>
+<?php  // include "includes/header.view.php"; 
+?>
 
 
 
@@ -15,7 +16,7 @@
 
     body {
 
-        background-color: rgb(235, 180, 113) ;
+        background-color: rgb(235, 180, 113);
     }
 
     img {
@@ -180,7 +181,7 @@
                     <a class="nav-link" aria-current="page" href="<?= ROOT ?>/about_us"> About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="<?= ROOT ?>/feedBack">FeedBack</a>
+                    <a class="nav-link" aria-current="page" href="<?= ROOT ?>/Feedback">FeedBack</a>
                 </li>
 
 

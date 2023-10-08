@@ -1,5 +1,5 @@
 <?php $this->view("includes/header"); ?>
-<?php $this->view("dashboard"); ?>
+<?php $this->view("includes/sidebar"); ?>
 
 <style>
     /* Add CSS styles for table alignment and beautification */
@@ -52,17 +52,21 @@
                         <th scope="col">Customer Name</th>
                         <th scope="col">Customer Phone</th>
                         <th scope="col">Customer Address</th>
+                        <th scope="col">Table Num</th>
                         <th scope="col">Payment Mode</th>
                         <th scope="col">Total</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($row as $order) : ?>
+                    <?php 
+                    $sn =0;
+                    foreach ($row as $order) : ?>
                         <tr>
-                            <td><?= $order->id ?></td>
+                            <td><?= ++$sn ?></td>
                             <td><?= $order->full_name ?></td>
                             <td><?= $order->phone ?></td>
                             <td><?= $order->address ?></td>
+                            <td><?= $order->table_no ?></td>
                             <td><?= $order->payment_mode ?></td>
                             <td><?= $order->total ?></td>
                             <td>

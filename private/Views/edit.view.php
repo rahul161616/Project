@@ -59,14 +59,14 @@ ini_set('display_errors', 1);
 
 
                     if (isset($rows1) && is_array($rows1)) {
-                       
+
                         $sr = 1;
                         foreach ($rows1 as $row1) { ?>
                             <input class="w-100" type="text" name="orders_id" value="<?= $row1->order_id ?>">
                             <tr>
                                 <th scope='row'><?= $sr; ?></th>
                                 <td><?= $row1->i_name; ?></td>
-                                <!-- <td><?= $row1->i_price; ?><input type='text' name="<?=$row1->i_name;?>" class='iprice' value="<?= $row1->i_price; ?>"> -->
+                                <!-- <td><?= $row1->i_price; ?><input type='text' name="<?= $row1->i_name; ?>" class='iprice' value="<?= $row1->i_price; ?>"> -->
                                 </td>
                                 <td>
                                     <div class="input-group">
@@ -93,6 +93,7 @@ ini_set('display_errors', 1);
             </table>
 
             <input name="updates" type="submit" class="btn btn-success" value="Update">
+            <br><br>
             <input name="delete" type="submit" class="btn btn-success" value="Delete All And reorder">
 
         </div>
