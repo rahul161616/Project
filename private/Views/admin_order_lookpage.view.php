@@ -58,8 +58,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php 
-                    $sn =0;
+                    <?php
+                    $sn = 0;
                     foreach ($row as $order) : ?>
                         <tr>
                             <td><?= ++$sn ?></td>
@@ -76,19 +76,37 @@
                                             <th scope="col">Name</th>
                                             <th scope="col">Price</th>
                                             <th scope="col">Quantity</th>
+                                            <th scope="col">Total</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($row1 as $orderDetail) : ?>
+                                        <?php
+                                        $gtot = 0;
+
+                                        foreach ($row1 as $orderDetail) : ?>
                                             <?php if ($orderDetail->order_id == $order->id) : ?>
                                                 <tr>
                                                     <td><?= $orderDetail->i_name ?></td>
                                                     <td><?= $orderDetail->i_price ?></td>
                                                     <td><?= $orderDetail->qty ?></td>
+                                                    <td><?php $i_total = $orderDetail->i_price * $orderDetail->qty;
+                                                        echo $i_total;
+                                                        $gtot += $i_total;
+                                                        ?></td>
+
                                                 </tr>
                                             <?php endif; ?>
                                         <?php endforeach; ?>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td><b>Grand total</b></td>
+                                            <td> - </td>
+                                            <td>-</td>
+                                            <td><?= $gtot ?></td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </td>
                         </tr>
