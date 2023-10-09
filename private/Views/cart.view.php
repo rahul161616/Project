@@ -104,7 +104,7 @@
             <div class="border bg-light rounded p-4">
                 <h3>Grand Total: <?= number_format($sub_total) ?></h3>
                 <h4 class="text-right" id='gtotal'></h4>
-                <a href="<?= ROOT ?>/home" class="btn btn-block">
+                <a href="<?= ROOT ?>/item_menu" class="btn btn-block">
                     <input type="button" class="btn btn-warning pull-left" value=" Continue Shopping" name="">
                 </a>
                 <a href="<?= ROOT ?>/checkout" class="btn  btn-block">

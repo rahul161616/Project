@@ -61,6 +61,7 @@
         <a href="<?= ROOT ?>/Admin_feedback_lookpage" id="admin_feedback_lookpage">FeedBack</a>
         <a href="<?= ROOT ?>/Additemsadmin">AddItems</a>
         <a href="<?= ROOT ?>/Addstaffs">Addstaffs</a>
+        <a href="<?= ROOT ?>/Orderdate">View Data</a>
     </div>
 
     <script>

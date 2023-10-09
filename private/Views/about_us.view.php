@@ -225,7 +225,7 @@
      <div class="row">
          <div class="mida col-lg-6 col-md-6 col-sm-12 ">
              <h1>Khaja Ghar</h1>
-             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima eaque culpa, dolorem quod ab omnis aut minus, illum hic, doloribus distinctio asperiores modi blanditiis excepturi. Nihil voluptatum porro voluptas earum!</h3>
+             <h3>Khaja Ghar is your modern solution for a hassle-free dining experience. Our platform empowers restaurant-goers to place orders directly from their own devices, eliminating the need to wait for waitstaff. We've rigorously tested our system to ensure a simple, error-free, and user-friendly experience. Additionally, our web application allows for easy creation and addition of menu items. Join us and revolutionize your dining experience with Khaja Ghar..!</h3>
              <a href="<?= ROOT ?>/home">Go Home</a>
          </div>
          <div class="mida col-lg-6 col-md-6 col-sm-12 ">

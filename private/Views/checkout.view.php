@@ -108,7 +108,7 @@ $this->view('includes/nav'); ?>
             </label>
             <input class="form-check-input" type="hidden" name="total" id="total" value="<?= $sub_total ?>">
 
-            <a href="<?= ROOT ?>/home" class="btn  btn-block">
+            <a href="<?= ROOT ?>/item_menu" class="btn  btn-block">
                 <input type="button" class="new btn btn-primary pull-left" value=" Continue Shopping" name="">
             </a>
             <a href="<?= ROOT ?>/checkout" class="btn btn-block">
