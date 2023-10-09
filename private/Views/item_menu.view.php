@@ -58,7 +58,7 @@ show(NULL);
                            <form method=\"POST\" form action=\"" . ROOT . "/add_to_cart/" . $i_temId . "\">
                           <div class=\"card shadow\">
                            <div>
-                            <img src=\"" . ROOT . "/Assets/$i_img\" alt=\"$i_alt\" class=\"img-fluid \"> 
+                            <img src=\"" . ROOT . "/Assets/$i_img\" alt=\"$i_alt\" class=\"img-fluid fixedimg \"> 
                              </div>
                             <div class=\"card-body\">
                             <h1 class=\"food_name\">$i_name</h1>
@@ -90,4 +90,12 @@ show(NULL);
     ?>
 </div>
 </div>
+<style>
+    .fixedimg {
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
+</style>
+
 <?php $this->view('includes/footer'); ?>

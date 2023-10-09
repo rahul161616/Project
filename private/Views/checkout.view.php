@@ -30,7 +30,7 @@ $this->view('includes/nav'); ?>
 </div>
 <div class="mb-3">
     <label for="table_n">Table No</label>
-    <input type="text" name="table_n" class="form-control" id="table_n" required>
+    <input type="number" name="table_n" class="form-control" id="table_n" required>
 </div>
 <div class="form-check">
     <input class="form-check-input" type="radio" name="payment_Mode" id="flexRadioDefault1" value="Esewa">

@@ -11,7 +11,7 @@ class Update extends Controller
     {
         if (isset($_POST['updates'])) {
             if (isset($_COOKIE['edit-limit'])) {
-                $this->update();
+                $this->updates();
             } else {
                 redirect(ROOT);
             }
@@ -24,15 +24,17 @@ class Update extends Controller
         // show($rows);
 
 
-        $this->view('Update');
+        // $this->view('Update');
     }
-    public function update()
+    public function updates()
     {
 
 
         $update = new Order_details();
+        // show($_POST);
         /// get the orders id  from the form
         $id = $_POST['orders_id'];
+        show($_POST);
 
         // get the row from orders id
         $query = "select * from `order_details` where order_id = $id";
@@ -60,8 +62,8 @@ class Update extends Controller
             $updates = $update->update($row->id, $data);
         }
 
-
-        redirect(ROOT);
+        //   die();
+        redirect('edit?phone='.$_SESSION['user']);
 
 
 
@@ -107,8 +109,6 @@ class Update extends Controller
 
 
         $delete = new user_details_orders();
-
-
 
         $query = "delete from `user_details_orders` where id = $id";
 

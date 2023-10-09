@@ -1,5 +1,4 @@
 <?php $this->view('includes/header'); ?>
-
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -10,8 +9,37 @@
         padding: 0;
     }
 
+    /* Navbar styles */
+    nav {
+        background-color: white;
+        /* Change background color to white */
+        border-bottom: 3px solid rgb(208, 156, 93);
+        position: fixed;
+        top: 0;
+        left: -10px;
+        right: -30px;
+    }
+
+    /* Navbar link styles */
+    .navbar-nav .nav-link {
+        color: brown;
+    }
+
+    /* Navbar link hover styles */
+    .navbar-nav .nav-link:hover {
+        color: #000;
+        /* Change color on hover */
+        font-weight: 500;
+    }
+
+
+
+
     body {
         background-color: rgb(235, 180, 113);
+        margin-top: -10px;
+        margin-right: -20px;
+        /* Add margin to body to prevent content from being hidden behind the navbar */
     }
 
     .row {
@@ -64,10 +92,6 @@
     }
 
     /* Navbar styles */
-    nav {
-        border-bottom: 3px solid rgb(208, 156, 93);
-    }
-
     .navbar-brand {
         font-size: 2.5rem;
         font-weight: 500;
@@ -164,7 +188,7 @@
             $element = "
             <div class=\"col-lg-4 col-md-6 col-sm-12 my-3\">
                 <div class=\"card shadow\">
-                    <img src=\"" . ROOT . "/Assets/$i_img\" alt=\"$i_alt\" class=\"img-fluid\">
+                    <img src=\"" . ROOT . "/Assets/$i_img\" alt=\"$i_alt\" class=\"img-fluid fixedimg\">
                     <div class=\"card-body\">
                         <h1 class=\"food_name\">$i_name</h1>
                         <h4>$i_price</h4>
@@ -184,5 +208,12 @@
         ?>
     </div>
 </div>
+<style>
+    .fixedimg {
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
+</style>
 
 <?php $this->view('includes/footer'); ?>
