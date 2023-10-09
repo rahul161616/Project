@@ -254,7 +254,7 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            height: 100px;
+            height: 70px;
             /* Set the desired height for the footer */
             position: fixed;
             bottom: 0;
@@ -292,10 +292,7 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="<?= ROOT ?>/Feedback">FeedBack</a>
                     </li>
-            </div>
-
-            <a class="admin_login" href="<?= ROOT ?>/Adminlogin"><i class="fa-solid fa-lock"></i>Admin Login</a>
-        </div>
+          
     </nav>
 
 

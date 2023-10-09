@@ -34,7 +34,7 @@ class Update extends Controller
         // show($_POST);
         /// get the orders id  from the form
         $id = $_POST['orders_id'];
-        show($_POST);
+        // show($_POST);
 
         // get the row from orders id
         $query = "select * from `order_details` where order_id = $id";

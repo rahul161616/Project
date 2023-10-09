@@ -3,82 +3,127 @@ $this->view('includes/header');
 $this->view('includes/nav'); ?>
 
 
+
 <style>
+    .wholediv {
+        margin-left: 5%;
+    }
+
+    a.btn-primary,
+    a.btn-primary:hover,
+    a.btn-primary:active,
+    a.btn-primary:visited,
+    a.btn-primary:focus {
+        background-color: white !important;
+        border-color: white !important;
+    }
+
     .new {
         width: 200px;
+        height: 50px;
+
+
+
+        /* padding: 10px ; */
+
+
+        font-size: 1.25rem;
+        font-weight: 400;
+        border-radius: 10px;
+        opacity: 90%;
 
     }
 
-    input {
-        writing-mode: sideways-lr;
+    button.btn {
+        width: 180px;
+        height: 40px;
+        font-size: 1.25rem;
+        font-weight: 400;
+        border-radius: 10px;
+        opacity: 90%;
+        box-shadow: 0px 0px 3px 0px blue;
+    }
+
+    .form-control {
+        text-align: left;
+        width: 50%;
+    }
+
+    .btn-primary:hover {
+        background-color: rgb(225, 222, 222);
+        color: rgb(15, 15, 15);
+        font-weight: 450;
+
     }
 </style>
-<div class="mb-3">
-    <?php if (is_array($rows)) : ?>
+<div class="wholediv">
+    <div class=" mb-3">
+        <?php if (is_array($rows)) : ?>
 
-        <form method="POST">
-            <label for="name">Full Name</label>
-            <input type="text" name="name" class="form-control" id="name" required>
-</div>
-<div class="mb-3">
-    <label for="phone">Phone Number</label>
-    <input type="number" name="phone" class="form-control" id="phone" required>
-</div>
-<div class="mb-3">
-    <label for="address">Address</label>
-    <input type="text" name="address" class="form-control" id="address" required>
-</div>
-<div class="mb-3">
-    <label for="table_n">Table No</label>
-    <input type="number" name="table_n" class="form-control" id="table_n" required>
-</div>
-<div class="form-check">
-    <input class="form-check-input" type="radio" name="payment_Mode" id="flexRadioDefault1" value="Esewa">
-    <label class="form-check-label" for="flexRadioDefault1">
-        Esewa
-    </label>
-</div>
-<div class="form-check">
-    <input class="form-check-input" type="radio" name="payment_Mode" value="Cash_on_Counter" id="flexRadioDefault2" checked>
-    <label class="form-check-label" for="flexRadioDefault2">
-        Cash On Counter
-    </label>
-</div>
-<!-- <button class="btn btn-primary btn-block" name="place">Place Order</button> -->
-<!-- ... Your existing form fields ... -->
-<button class="btn btn-primary btn-block" id="checkDiscountBtn">Check Discount</button>
-<div>
-    <!-- <p>Discount Result:</p> -->
-    <br>
-    <div id="discountResult">
-
-    </div> <!-- The discount result will be displayed here -->
-</div>
-
-<!-- ... Rest of your HTML ... -->
-
-<div class="col-lg-3">
-    <div class="border bg-light rounded p-4">
-        <label for="total">
-            <h3 id='gtotal'>Grand Total:<?= number_format($sub_total) ?></h3>
+            <form method="POST">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" class="form-control" id="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="phone">Phone Number</label>
+        <input type="number" name="phone" class="form-control" id="phone" required>
+    </div>
+    <div class="mb-3">
+        <label for="address">Address</label>
+        <input type="text" name="address" class="form-control" id="address" required>
+    </div>
+    <div class="mb-3">
+        <label for="table_n">Table No</label>
+        <input type="number" name="table_n" class="form-control" id="table_n" required>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="payment_Mode" id="flexRadioDefault1" value="Esewa">
+        <label class="form-check-label" for="flexRadioDefault1">
+            Esewa
         </label>
-        <input class="form-check-input" type="hidden" name="total" id="total" value="<?= $sub_total ?>">
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="payment_Mode" value="Cash_on_Counter" id="flexRadioDefault2" checked>
+        <label class="form-check-label" for="flexRadioDefault2">
+            Cash On Counter
+        </label>
+    </div>
+    <!-- <button class="btn btn-primary btn-block" name="place">Place Order</button> -->
+    <!-- ... Your existing form fields ... -->
+    <button class="btn btn-primary btn-block" id="checkDiscountBtn">Check Discount</button>
+    <div>
+        <!-- <p>Discount Result:</p> -->
+        <br>
+        <div id="discountResult">
 
-        <a href="<?= ROOT ?>/home" class="btn  btn-block">
-            <input type="button" class="new btn btn-primary pull-left" value="< Continue Shopping" name="">
-        </a>
-        <a href="<?= ROOT ?>/checkout" class="btn btn-block">
-            <input type="submit" class="new btn btn-primary pull-right" value="Pay >" id="pay">
-        </a>
-        </form>
-    <?php else : ?>
-        <div>
-            No Items were found in the list!</p>
-            <!-- <-- needs styling -->
-        </div>
-    <?php endif; ?>
+        </div> <!-- The discount result will be displayed here -->
     </div>
 
+    <!-- ... Rest of your HTML ... -->
+
+    <div class="col-lg-3">
+        <div class="border bg-light rounded p-4">
+            <label for="total">
+                <h3 id='gtotal'>Grand Total:<?= number_format($sub_total) ?></h3>
+            </label>
+            <input class="form-check-input" type="hidden" name="total" id="total" value="<?= $sub_total ?>">
+
+            <a href="<?= ROOT ?>/home" class="btn  btn-block">
+                <input type="button" class="new btn btn-primary pull-left" value=" Continue Shopping" name="">
+            </a>
+            <a href="<?= ROOT ?>/checkout" class="btn btn-block">
+                <input type="submit" class="new btn btn-primary pull-right" value="Confirm Order " id="pay">
+            </a>
+            </form>
+        <?php else : ?>
+            <div>
+                No Items were found in the list!</p>
+                <!-- <-- needs styling -->
+            </div>
+        <?php endif; ?>
+        </div>
+
+    </div>
 </div>
 </div>
 <?php $this->view('includes/footer');

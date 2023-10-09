@@ -9,11 +9,32 @@
     </div>
 <?php } ?>
 
-<style>
-    input {
-        width: 200px;
+
+    <style>
+    .btn-success {
+        width: 150px;
+        height: 50px;
+        box-shadow: 0px 0px 3px 0px #2C6322;
+
+        font-size: 1.25rem;
+        font-weight: 400;
+        border-radius: 10px;
+        opacity: 90%;
+    }
+
+    .delete_reorder {
+        width: 230px;
+    }
+
+    .btn-success:hover {
+        background-color: white;
+        color: #2C632C;
+        font-weight: 500;
+        border: 1px solid black;
+        box-shadow: 0px 0px 0px 0px black;
     }
 </style>
+
 <!-- <form method="get">
     <table class="table">
         <tr>
@@ -82,7 +103,7 @@ ini_set('display_errors', 1);
 
             <input name="updates" type="submit" class="btn btn-success" value="Update">
             <br><br>
-            <input name="delete" type="submit" class="btn btn-success" value="Delete All And reorder">
+            <input name="delete" type="submit" class="delete_reorder btn btn-success" value="Delete All And reorder">
         </div>
     </div>
 </form>

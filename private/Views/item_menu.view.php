@@ -7,13 +7,10 @@ show(NULL);
 <?php $this->view('includes/nav'); ?>
 
 
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
-    body {
-
-        background-color: rgb(235, 180, 113);
-    }
-
     img {
         display: inline-block;
         max-height: 250px;
@@ -42,8 +39,28 @@ show(NULL);
 
 
     h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
 
+    }
+
+    span,
+    i {
+        font-size: 1.15rem;
+    }
+
+    .btn-warning {
+        background-color: #E4A11B;
+        border: 2px solid #E4A11B;
+        border-radius: 7px;
+        font-weight: 400;
+        padding: 10px 20px;
+    }
+
+    .btn-warning:hover {
+        background-color: black;
+        border: 2px solid black;
+        transition: 0.7s;
+        color: #E4A11B;
     }
 </style>
 
