@@ -292,7 +292,7 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="<?= ROOT ?>/Feedback">FeedBack</a>
                     </li>
-          
+
     </nav>
 
 
@@ -326,7 +326,8 @@
 
 
     </div>
-
+    <!-- bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 <div class="footer">
     <a class="social-icon" href="#"><i class="fa-brands fa-facebook"></i></a>

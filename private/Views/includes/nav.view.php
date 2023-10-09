@@ -70,16 +70,14 @@
                 <li class=" nav-item">
                     <a class="nav-link" href="<?= ROOT ?>/Cart">My Items</a>
                 </li>
-                <!-- <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown link
+                        Drop For edit
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="<?= ROOT ?>/Edit<?php if (isset($_SESSION['user'])) echo "?phone=" . $_SESSION['user'] ?>" id=" editButton">Edit</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
-                </li> -->
+                </li>
             </ul>
         </div>
     </div>

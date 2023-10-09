@@ -5,17 +5,18 @@
     .table-container {
         display: flex;
         justify-content: center;
-        /* align-items: center; */
-        height: calc(100vh + 350px);
-        /* Adjust this value to create space from the top */
         margin-top: 50px;
         /* Adjust this value to center the table vertically */
+        overflow-x: auto;
+        /* Enable horizontal scrolling */
     }
 
     table {
         background-color: orange;
         width: 100%;
+        /* Set the width to 100% to enable horizontal scrolling */
         max-width: 800px;
+        /* Set a maximum width if needed */
         border-collapse: collapse;
     }
 
@@ -36,6 +37,19 @@
 
     tr:hover {
         background-color: #ddd;
+    }
+
+    /* Media queries for smaller screens */
+    @media only screen and (max-width: 768px) {
+        .table-container {
+            margin-top: 10px;
+            /* Adjust this value as needed */
+        }
+
+        table {
+            max-width: 100%;
+            /* Adjust the max-width for responsiveness */
+        }
     }
 </style>
 
